@@ -9,17 +9,31 @@
 </head>
 <body>
 <div id="container">
-    James Choca
-    <nav>
-        <ul>
-            <li>
-                <a href="/resume.html"><i class="fa fa-terminal"></i> Resume</a>
-            </li>
-            <li>
-                <a href="http://notesinflux.com"><i class="fa fa-terminal"></i> Blog</a>
-            </li>
-        </ul>
-    </nav>
+    <div id="terminal">
+        <nav>
+            <ul>
+                <li>
+                    <a href="/resume.html"><i class="fa fa-terminal"></i> Resume</a>
+                </li>
+                <li>
+                    <a href="http://notesinflux.com"><i class="fa fa-terminal"></i> Blog</a> <span id="cursor">&nbsp;</span>
+                </li>
+            </ul>
+        </nav>
+    </div>
 </div>
+<script>
+    var toggleCursor = function () {
+        var cursor = document.getElementById('cursor');
+        var hidden = (cursor.className === "hidden");
+        if (hidden) {
+            cursor.className = "";
+        }
+        else {
+            cursor.className = "hidden";
+        }
+    };
+    setInterval(toggleCursor, 500);
+</script>
 </body>
 </html>
