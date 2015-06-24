@@ -1,10 +1,29 @@
 (function () {
-    var blog = "Blog";
-    var resume = "Resume";
-    var cursor = "_";
+    var visited = null, 
+        intervalId,
+        blog = "Blog",
+        resume = "Resume",
+        cursor = "_";
 
-    var intervalId = setInterval(typeResume, 250);
+    if (window.sessionStorage) {
+        visited = sessionStorage.getItem('jamesChocaVisited');
+    }
 
+    if (!visited) {
+        intervalId = setInterval(typeResume, 250);
+        if (window.sessionStorage) {
+            sessionStorage.setItem('jamesChocaVisited', 1);
+        }
+    }
+    else {
+        setText('resume', '> Resume');
+        setText('blog', '> Blog_');
+    }
+
+    function setText(id, text) {
+        document.getElementById(id).textContent = text;
+    }
+    
     function typeResume() {
         resume = typeVal('resume', resume);
         if (!resume) { 
