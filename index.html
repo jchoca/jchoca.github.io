@@ -12,27 +12,15 @@
         <nav>
             <ul>
                 <li>
-                    <a href="/ChocaResume.pdf">> Resume</a>
+                    <a id="resume" href="/ChocaResume.pdf">> </a>
                 </li>
                 <li>
-                    <a href="http://notesinflux.com">> Blog</a> <span id="cursor">&nbsp;</span>
+                    <a id="blog" href="http://notesinflux.com"></a>
                 </li>
             </ul>
         </nav>
     </div>
 </div>
-<script>
-    var toggleCursor = function () {
-        var cursor = document.getElementById('cursor');
-        var hidden = (cursor.className === "hidden");
-        if (hidden) {
-            cursor.className = "";
-        }
-        else {
-            cursor.className = "hidden";
-        }
-    };
-    setInterval(toggleCursor, 500);
-</script>
+<script src="script.min.js"></script>
 </body>
 </html>
