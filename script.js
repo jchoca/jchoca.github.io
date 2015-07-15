@@ -4,13 +4,14 @@
         blog = "Blog",
         resume = "Resume",
         cursor = "_";
+        TYPE_INTERVAL = 100;
 
     if (window.sessionStorage) {
         visited = sessionStorage.getItem('jamesChocaVisited');
     }
 
     if (!visited) {
-        intervalId = setInterval(typeResume, 250);
+        intervalId = setInterval(typeResume, TYPE_INTERVAL);
         if (window.sessionStorage) {
             sessionStorage.setItem('jamesChocaVisited', 1);
         }
@@ -30,7 +31,7 @@
             clearInterval(intervalId);
             setTimeout(function () {
                 removeCursor('resume');
-                intervalId = setInterval(typeBlog, 250);
+                intervalId = setInterval(typeBlog, TYPE_INTERVAL);
             }, 750);
         }
     }
